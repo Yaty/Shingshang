@@ -15,28 +15,6 @@
  */
 package shingshang;
 
-import java.util.LinkedList;
-
-public class Joueur {
-    LinkedList<Pion> listePion;
-    static int nbJoueurs=0;
-    int idJoueur;
-
-    public Joueur() {
-        this.listePion = new LinkedList<>(); // http://stackoverflow.com/questions/4166966/what-is-the-point-of-the-diamond-operator-in-java-7
-        this.idJoueur = Joueur.nbJoueurs;
-        Joueur.nbJoueurs++;
-    }
-
-    public LinkedList<Pion> getListePion() {
-        return listePion;
-    }
-
-    public static int getNbJoueurs() {
-        return nbJoueurs;
-    }
-
-    public int getIdJoueur() {
-        return idJoueur;
-    } 
+public class Lion extends Pion  {
+    
 }
