@@ -1,5 +1,9 @@
 package shingshang;
 
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.GridPane;
+
 /*
  * Copyright 2016 Hugo Da Roit - Bourdalé Jules.
  *
@@ -17,11 +21,50 @@ package shingshang;
  */
 
 public abstract class Pion {
-    String type;
+    protected int type;
+    private int x;
+    private int y;
+    protected Image img;
     boolean jouable;
     
     public Pion() {
         System.out.println("Création d'un pion !");
+    }
+    
+    public void afficher(GridPane grid){
+        ImageView iv = new ImageView();
+        iv.setImage(img);
+        iv.setFitWidth(64);
+        iv.setFitHeight(64);
+        grid.add(iv, getX(), getY());
+    }
+
+    /**
+     * @return the x
+     */
+    public int getX() {
+        return x;
+    }
+
+    /**
+     * @param x the x to set
+     */
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    /**
+     * @return the y
+     */
+    public int getY() {
+        return y;
+    }
+
+    /**
+     * @param y the y to set
+     */
+    public void setY(int y) {
+        this.y = y;
     }
     
 }

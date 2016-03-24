@@ -1,12 +1,14 @@
 package shingshang;
 
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import javafx.scene.layout.GridPane;
+ import javafx.scene.image.Image;
+ import javafx.scene.image.ImageView;
 
 /*
  * Copyright 2016 Hugo Da Roit - Bourdalé Jules.
@@ -26,26 +28,34 @@ import javafx.stage.Stage;
 
 public class Shingshang extends Application {
     
+    private GridPane grille;
+    private int[] map;
+    
     @Override
-    public void start(Stage primaryStage) {
-        Button btn = new Button();
-        btn.setText("Say 'Hello World'");
-        btn.setOnAction(new EventHandler<ActionEvent>() {
-            
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
-            }
-        });
+    public void start(Stage stage){
         
-        StackPane root = new StackPane();
-        root.getChildren().add(btn);
+        System.out.println("Working Directory = "+System.getProperty("user.dir"));
         
-        Scene scene = new Scene(root, 300, 250);
+        GridPane grid = new GridPane();
+        grid.setAlignment(Pos.CENTER);
+        grid.setHgap(0);
+        grid.setVgap(0);
+        grid.setPadding(new Insets(0, 0, 0, 0));
+        Scene scene = new Scene(grid, 640, 640);
+        Plateau plateau = new Plateau();
+        plateau.afficher(grid);
         
-        primaryStage.setTitle("Hello World!");
-        primaryStage.setScene(scene);
-        primaryStage.show();
+        Pion lion1 = new Lion();
+        lion1.afficher(grid);
+       
+        
+        stage.setTitle("ShingShang");
+        stage.setScene(scene);
+        stage.show();
+        lion1.setX(3);
+        lion1.setY(3);
+        plateau.afficher(grid);
+        lion1.afficher(grid);
     }
 
     /**
@@ -54,5 +64,4 @@ public class Shingshang extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-    
 }

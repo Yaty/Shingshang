@@ -15,6 +15,14 @@
  */
 package shingshang;
 
+import javafx.scene.image.Image;
+
 public class Lion extends Pion  {
     
+    
+    public Lion(){
+        super.img = new Image("shingshang/images/lionJ1.png");
+        this.setX(1);
+        this.setY(1);
+    }
 }
