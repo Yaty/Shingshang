@@ -17,25 +17,79 @@ package shingshang;
 
 import java.util.LinkedList;
 
+/**
+ *
+ * @author Hugo
+ */
 public class Joueur {
     LinkedList<Pion> listePion;
     static int nbJoueurs=0;
     int idJoueur;
 
+    /**
+     * Constructeur de Joueur
+     * Créer une LinkedList
+     * Associe un ID au joueur
+     */
     public Joueur() {
-        this.listePion = new LinkedList<>(); // http://stackoverflow.com/questions/4166966/what-is-the-point-of-the-diamond-operator-in-java-7
+        this.listePion = new LinkedList<>();
         this.idJoueur = Joueur.nbJoueurs;
         Joueur.nbJoueurs++;
     }
-
+    
+    /**
+     *
+     * @return La taille de la liste associé au joueur
+     */
+    public int getSizeOfListe() {
+        return listePion.size();
+    }
+    
+    /**
+     *
+     * @param pion
+     */
+    public void addPion(Pion pion) {
+        listePion.add(pion);
+    }
+    
+    /**
+     *
+     * @param index
+     */
+    public void deletePion(int index) {
+        listePion.remove(index);
+    }
+    
+    /**
+     *
+     * @param index
+     * @return Le pion à la position index dans la LinkedList
+     */
+    public Pion getPionAtIndex(int index) {
+        return listePion.get(index);
+    }
+    
+    /**
+     *
+     * @return La LinkedList entière
+     */
     public LinkedList<Pion> getListePion() {
         return listePion;
     }
 
+    /**
+     *
+     * @return Le nombre de joueurs
+     */
     public static int getNbJoueurs() {
         return nbJoueurs;
     }
 
+    /**
+     *
+     * @return L'identifiant du joueur
+     */
     public int getIdJoueur() {
         return idJoueur;
     } 
