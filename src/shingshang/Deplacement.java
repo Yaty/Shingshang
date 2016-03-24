@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Hugo Da Roit - Bourdalé Jules.
+ * Copyright 2016 Hugo.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,14 +15,11 @@
  */
 package shingshang;
 
-import javafx.scene.image.Image;
-
-public class Lion extends Pion  {
-    
-    
-    public Lion(){
-        super.img = new Image("shingshang/images/lionJ1.png");
-        super.setX(1);
-        super.setY(1);
-    }
+/**
+ *
+ * @author Hugo
+ */
+public interface Deplacement {
+    public boolean[][] getDeplacement();
+    public Pion setDeplacement(int index, int x, int y);
 }
