@@ -1,12 +1,14 @@
 package shingshang;
 
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import javafx.scene.layout.GridPane;
+ import javafx.scene.image.Image;
+ import javafx.scene.image.ImageView;
 
 /*
  * Copyright 2016 Hugo Da Roit - Bourdalé Jules.
@@ -26,26 +28,25 @@ import javafx.stage.Stage;
 
 public class Shingshang extends Application {
     
+    private GridPane grille;
+    private int[] map;
+    
     @Override
-    public void start(Stage primaryStage) {
-        Button btn = new Button();
-        btn.setText("Say 'Hello World'");
-        btn.setOnAction(new EventHandler<ActionEvent>() {
-            
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
-            }
-        });
+    public void start(Stage stage) {
         
-        StackPane root = new StackPane();
-        root.getChildren().add(btn);
+        GridPane grid = new GridPane();
+        grid.setAlignment(Pos.CENTER);
+        grid.setHgap(0);
+        grid.setVgap(0);
+        grid.setPadding(new Insets(0, 0, 0, 0));
+        Scene scene = new Scene(grid, 640, 640);
+        System.out.println("création plateau");
+        Plateau plateau = new Plateau();
+        plateau.afficher(grid);
         
-        Scene scene = new Scene(root, 300, 250);
-        
-        primaryStage.setTitle("Hello World!");
-        primaryStage.setScene(scene);
-        primaryStage.show();
+        stage.setTitle("ShingShang");
+        stage.setScene(scene);
+        stage.show();
     }
 
     /**
@@ -54,5 +55,4 @@ public class Shingshang extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-    
 }
