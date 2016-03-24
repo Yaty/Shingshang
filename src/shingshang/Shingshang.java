@@ -32,7 +32,9 @@ public class Shingshang extends Application {
     private int[] map;
     
     @Override
-    public void start(Stage stage) {
+    public void start(Stage stage){
+        
+        System.out.println("Working Directory = "+System.getProperty("user.dir"));
         
         GridPane grid = new GridPane();
         grid.setAlignment(Pos.CENTER);
@@ -40,13 +42,20 @@ public class Shingshang extends Application {
         grid.setVgap(0);
         grid.setPadding(new Insets(0, 0, 0, 0));
         Scene scene = new Scene(grid, 640, 640);
-        System.out.println("création plateau");
         Plateau plateau = new Plateau();
         plateau.afficher(grid);
+        
+        Pion lion1 = new Lion();
+        lion1.afficher(grid);
+       
         
         stage.setTitle("ShingShang");
         stage.setScene(scene);
         stage.show();
+        lion1.setX(3);
+        lion1.setY(3);
+        plateau.afficher(grid);
+        lion1.afficher(grid);
     }
 
     /**

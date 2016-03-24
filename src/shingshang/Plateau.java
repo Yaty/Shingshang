@@ -25,11 +25,11 @@ import javafx.scene.layout.GridPane;
  */
 public class Plateau {
     
-    private final Image imgEau = new Image("eau.png");
-    private final Image imgPierre = new Image("pierre.png");
-    private final Image imgHerbe = new Image("herbe.png");
-    private final Image imgPortailJ1 = new Image("portailJ1.png");
-    private final Image imgPortailJ2 = new Image("portailJ2.png");
+    private final Image imgEau = new Image("shingshang/images/eau.png");
+    private final Image imgPierre = new Image("shingshang/images/pierre.png");
+    private final Image imgHerbe = new Image("shingshang/images/herbe.png");
+    private final Image imgPortailJ1 = new Image("shingshang/images/portailJ1.png");
+    private final Image imgPortailJ2 = new Image("shingshang/images/portailJ2.png");
     private int[][] matriceCarte = new int[10][10];
     
     public Plateau(){
